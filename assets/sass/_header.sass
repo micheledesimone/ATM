@@ -1,0 +1,155 @@
+.open-panel, .close-panel
+	position: fixed
+	z-index: 99999
+	color: black
+	top: 20px
+	left: 20px
+	font-size: 30px
+	display: none
+	&:hover
+		color: $red
+
+.site-header
+	+clearfix 
+	height: 100vh
+	position: relative
+	background-image: url(../images/main.jpg)
+	background-size: cover
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+
+	.nav-container
+		+position(fixed, 0 0 null 0)
+		z-index: 9999
+		height: 80px
+		background-color: white
+		box-shadow: 0px 3px 6px -1px rgba(0,0,0,0.3)
+
+		.logo
+			float: left
+			margin-left: 10%
+			height: 70px
+			width: 120px
+			background-image: url(../images/logo-01.png)
+			background-size: cover
+
+		.menu
+			float: right
+			margin-right: 10%
+
+			ul
+				list-style: none
+
+				li
+					float: left
+					line-height: 80px
+					margin-right: 20px
+
+					a
+						display: block
+						height: 100%
+						text-transform: uppercase
+						font-size: 12px
+						font-weight: 400
+						text-decoration: none
+						color: $grey
+
+						&:hover 
+							color: $red
+							border-bottom: 3px solid $red
+
+	.logo-bw
+		z-index: 1
+		width: 80px
+		height: 114px
+		background-image: url(../images/drop.png)
+		background-size: cover
+		background-position: center center
+		opacity: 0.3
+
+	h1, h2
+		text-align: center
+		text-transform: uppercase
+		color: white
+	h1 
+		font-size: 40px
+		padding: 30px 20px 20px
+		letter-spacing: 2px
+	h2
+		font-size: 20px
+		letter-spacing: 2px
+		padding: 0 20px 30px
+		font-weight: 300
+
+	hr 
+		margin: 0 auto
+		width: 200px
+		
+	i
+		+position(absolute, null null 3% 50%)
+		color: white
+		font-size: 30px
+
+.openNav #page
+	left: 0
+	transform: translate(70%, 0)
+	transition: transform 500ms ease
+
+#page
+	left: 0
+	// transform: translate(0, 0)
+	transition: transform 500ms ease
+
+@media screen and (max-width:800px)
+	.open-panel
+		display: inline
+	.site-header
+		 
+		.nav-container
+			.logo
+				position: absolute
+				right: 10px
+				top: 0
+			.menu
+				position: fixed
+				z-index: 0
+				width: 70%
+				left: -70%
+				top: 0
+				bottom: 0
+				background: #777
+				.close-panel
+					display: inline
+					position: relative
+					top: 40px
+					left: 10px
+
+				ul
+					border-top: 1px solid #888
+
+					li
+						float: none
+						width: 100%
+						text-align: left
+						line-height: 28px
+						padding: 0
+						box-sizing: border-box
+						border-bottom: 1px solid #888
+						&:first-child
+							border-top: 1px solid #888
+							margin-top: 55px
+
+						a
+							display: inline-block
+							padding: 10px
+							width: 100%
+							height: 50px
+							color: white
+					
+							&:hover 
+								color: white
+								border-bottom: none
+								background: $lightgrey
+

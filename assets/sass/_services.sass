@@ -1,0 +1,79 @@
+.services-section
+	+clearfix
+	background-color: $lightgrey
+	max-width: 100%
+	height: auto
+	padding: 111px 10px 200px
+
+	h3
+		font-size: 30px
+		letter-spacing: 2px
+		text:
+			transform: uppercase
+			align: center
+
+	.service-container
+		display: flex
+		justify-content: space-around
+		max-width: 850px
+		margin: 0 auto
+		
+		.service-wrap
+			// float: left
+			// margin-right: 10px
+
+			.service
+				width: 200px
+				background-color: white
+
+				img
+					width: 140px
+					height: 140px
+					display: block
+					margin: 0 auto
+					opacity: 0.3
+
+				h4	
+					padding: 20px 10px 0
+					color: $red
+					text-align: center
+					font:
+						weight: 600
+						size: 20px
+				p
+					padding: 10px 15px 20px
+					font-size: 13px
+					line-height: 15px
+					text-align: justify
+					letter-spacing: 1px
+
+			a
+				display: block
+				margin-top: 10px
+				width: 200px
+				padding: 20px 10px
+				background-color: $red
+				color: white
+				text:
+					align: center
+					decoration: none
+					transform: uppercase
+				cursor: pointer
+
+				&:hover
+					background-color: $orange
+					+transition
+		& .service-wrap:last-child
+			margin-right: 0
+
+@media screen and (max-width:800px)
+	.service-container
+		flex-direction: column
+		align-items: center
+
+		.service-wrap
+			margin-bottom: 20px
+
+		& .service-wrap:last-child
+			margin-bottom: 0
+
